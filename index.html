@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nolepstore | Premium Gaming Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Outfit:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-flex">
+            <a href="#" class="logo" onclick="showPage('home')">NOLEP<span>STORE</span></a>
+            
+            <div class="nav-links">
+                <a href="javascript:void(0)" onclick="showPage('home')"><i class="fa-solid fa-house"></i> <span>Home</span></a>
+                <a href="javascript:void(0)" onclick="showPage('catalog')"><i class="fa-solid fa-list"></i> <span>Jasa Joki</span></a>
+                <div class="cart-icon" onclick="toggleCart()">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main id="home-page" class="page active">
+        <section class="hero">
+            <div class="glow-effect"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <span class="badge">Eksklusif & Terpercaya</span>
+                    <h1>Level Up Akunmu <br>Dengan <span class="text-emerald">JOKI</span></h1>
+                    <p>Nolepstore menyediakan jasa joki Blox Fruit dengan kecepatan kilat dan privasi yang sangat terjaga.</p>
+                    <div class="hero-btns">
+                        <button class="btn-primary" onclick="showPage('catalog')">Buka Jasa Joki <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section id="catalog-page" class="page">
+    <div class="container">
+        <div class="section-title">
+            <h2>Layanan Joki <span>Eksklusif</span></h2>
+            <p>Pilih kategori layanan yang Anda butuhkan.</p>
+        </div>
+
+        <div class="category-filter">
+            <button class="filter-btn active" onclick="filterCategory('All')">Semua</button>
+            <button class="filter-btn" onclick="filterCategory('Sea Events')">Sea Events</button>
+            <button class="filter-btn" onclick="filterCategory('Dragon Update')">Dragon Update</button>
+            <button class="filter-btn" onclick="filterCategory('Race V4')">Race V4</button>
+            <button class="filter-btn" onclick="filterCategory('Material')">Material</button>
+            <button class="filter-btn" onclick="filterCategory('Sword')">Sword</button>
+            <button class="filter-btn" onclick="filterCategory('Raid')">Raid</button>
+            <button class="filter-btn" onclick="filterCategory('Instinct')">Instinct</button>
+        </div>
+
+        <div class="catalog-grid" id="product-list">
+            </div>
+    </div>
+</section>
+
+    <div id="cart-modal" class="modal-overlay cart-top">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fa-solid fa-basket-shopping"></i> Pesanan Anda</h2>
+                <button class="btn-close" onclick="toggleCart()">&times;</button>
+            </div>
+            <div id="cart-body" class="modal-body"></div>
+            <div class="modal-footer">
+                <div class="footer-top">
+                    <button class="btn-clear" onclick="clearCart()">
+                        <i class="fa-solid fa-trash-can"></i> Hapus Semua
+                    </button>
+                    <div class="total-section">
+                        <span>Total:</span>
+                        <span id="total-price">Rp 0</span>
+                    </div>
+                </div>
+                <button class="btn-checkout" onclick="checkoutWA()">
+                    <i class="fab fa-whatsapp"></i> Checkout WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="confirm-modal" class="modal-overlay">
+        <div class="modal-content confirm-box">
+            <div class="modal-body text-center">
+                <i class="fa-solid fa-triangle-exclamation" style="font-size: 3rem; color: #ef4444; margin-bottom: 20px;"></i>
+                <h3>Hapus Semua?</h3>
+                <p style="color: var(--text-dim); margin-top: 10px;">Semua item di keranjang akan dikosongkan.</p>
+            </div>
+            <div class="modal-footer confirm-btns">
+                <button class="btn-secondary" onclick="closeConfirm()">Batal</button>
+                <button class="btn-danger" onclick="executeClearCart()">Ya, Hapus</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="f-brand">
+                <a href="#" class="logo">NOLEP<span>STORE</span></a>
+                <p>Jasa joki Blox Fruit terbaik untuk para pemain baru</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/fredericleandroo" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@noleprng" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+
+            <div class="f-contact">
+                <h4>Hubungi Kami</h4>
+                <p><i class="fa-solid fa-envelope"></i> fredericleandro99@gmail.com</p>
+                <p><i class="fa-brands fa-whatsapp"></i> +6281283687508</p>
+                <p><i class="fa-solid fa-clock"></i> 09:00 - 22:00 WIB</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 <strong>Nolepstore</strong>. Created by Indraa Developer.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
